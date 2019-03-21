@@ -33,3 +33,19 @@ function checkPalindrome(str){
 console.log(checkPalindrome("Radar"));
 
 console.log(checkPalindrome("Borscht"));
+
+// ## 3. Digit Sum
+// Write a function `sumDigits` that accepts a number and returns the sum of its digits.
+// ```js
+
+function sumDigits(num){
+    let strNum = num.toString();
+    let sum = 0;
+    for(let i = 0;i<strNum.length;i++){
+        sum += Number(strNum[i]);
+    }
+    return sum;
+}
+
+
+console.log(sumDigits(24));
