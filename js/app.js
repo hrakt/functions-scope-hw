@@ -49,3 +49,16 @@ function sumDigits(num){
 
 
 console.log(sumDigits(24));
+
+
+// ## 4. Pythagoras
+// Write a function `calculateSide` that takes
+//  two arguments: `sideA` and `sideB`, and returns the solution for sideC using the Pythagorean theorem.
+
+
+function calculateSide(sideA,sideB){
+    return Math.sqrt(Math.pow(sideA,2)+Math.pow(sideB,2));
+}
+
+console.log(calculateSide(8, 6));
+
