@@ -83,25 +83,50 @@
 // // To test whether a number is Prime, you only need to test as far as the **square root** of 
 // that number. This is advisable for optimization and testing large numbers.
 
-function checkPrime(num){
-    for(let i = 2; i<= Math.round(Math.sqrt(num));i++){
-        if(num%i == 0){
-            return false;
-        }
-    }
+// function checkPrime(num){
+//     for(let i = 2; i<= Math.round(Math.sqrt(num));i++){
+//         if(num%i == 0){
+//             return false;
+//         }
+//     }
     
-    return true;
+//     return true;
    
+// }
+
+// function printPrimes(num){
+//     for(let i = 2;i<=num;i++){
+//         if(checkPrime(i)){
+//             console.log(i);
+//         }
+//     }
+// }
+// console.log(checkPrime(31));
+// // printPrimes(97);
+
+function insertDash(num){
+    let strNum = num.toString();
+    for(let i = 0; i<=strNum.length -1 ;i++){
+
+        console.log("im hovering over " + strNum[i]);
+        if((Number(strNum[i]))%2==1 && (Number(strNum[i+1]))%2==1){
+            strNum = strNum.substring(0,i) + "-"+ strNum.substring(i,strNum.length);
+            i++
+        }
+        // console.log(i +  " devided by 2 is " + (Number(strNum[i]))/2 );
+        // if((Number(strNum[i])%2==0&&Number(strNum[i+1]%2)==0) == true){
+            
+        //     strNum = strNum.substring(0,i) + "-"+ strNum.substring(i,strNum.length);
+        //     console.log("hey found it here");
+        // }
+    }
+    console.log(strNum);
 }
 
-function printPrimes(num){
-    for(let i = 2;i<=num;i++){
-        if(checkPrime(i)){
-            console.log(i);
-        }
-    }
-}
-console.log(checkPrime(31));
-// printPrimes(97);
+insertDash(454793);
+
+
+
+
 
 
