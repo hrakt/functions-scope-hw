@@ -107,26 +107,31 @@
 function insertDash(num){
     let strNum = num.toString();
     for(let i = 0; i<=strNum.length -1 ;i++){
-
-        console.log("im hovering over " + strNum[i]);
         if((Number(strNum[i]))%2==1 && (Number(strNum[i+1]))%2==1){
             strNum = strNum.substring(0,i) + "-"+ strNum.substring(i,strNum.length);
             i++
         }
-        // console.log(i +  " devided by 2 is " + (Number(strNum[i]))/2 );
-        // if((Number(strNum[i])%2==0&&Number(strNum[i+1]%2)==0) == true){
-            
-        //     strNum = strNum.substring(0,i) + "-"+ strNum.substring(i,strNum.length);
-        //     console.log("hey found it here");
-        // }
     }
-    console.log(strNum);
+    return strNum;
 }
 
-insertDash(454793);
+console.log(insertDash(454793));
 
 
 
+// 3. Write a function `reverseString` that takes a string as a parameter 
+// and returns that string with the letters reversed **without using `.split()`, `.reverse()`, or `.join()`**.
 
 
+function reverseString(str){
+    let newStr = "";
+    for(let i = str.length-1;i>= 0;i--){
+        newStr += str[i];
+    }
+    return newStr;
+}
 
+console.log(reverseString('hello'));
+
+
+//
