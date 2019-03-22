@@ -104,34 +104,65 @@
 // console.log(checkPrime(31));
 // // printPrimes(97);
 
-function insertDash(num){
-    let strNum = num.toString();
-    for(let i = 0; i<=strNum.length -1 ;i++){
-        if((Number(strNum[i]))%2==1 && (Number(strNum[i+1]))%2==1){
-            strNum = strNum.substring(0,i) + "-"+ strNum.substring(i,strNum.length);
-            i++
+// function insertDash(num){
+//     let strNum = num.toString();
+//     for(let i = 0; i<=strNum.length -1 ;i++){
+//         if((Number(strNum[i]))%2==1 && (Number(strNum[i+1]))%2==1){
+//             strNum = strNum.substring(0,i) + "-"+ strNum.substring(i,strNum.length);
+//             i++
+//         }
+//     }
+//     return strNum;
+// }
+
+// console.log(insertDash(454793));
+
+
+
+// // 3. Write a function `reverseString` that takes a string as a parameter 
+// // and returns that string with the letters reversed **without using `.split()`, `.reverse()`, or `.join()`**.
+
+
+// function reverseString(str){
+//     let newStr = "";
+//     for(let i = str.length-1;i>= 0;i--){
+//         newStr += str[i];
+//     }
+//     return newStr;
+// }
+
+// console.log(reverseString('hello'));
+
+
+
+// 5. Make your palindrome function work even if the string contains punctuation.  So: "Sit on a potato pan, Otis!!!"
+//  or "A man, a plan, a canal: Panama." or "Cigar? Toss it in a can! It is so tragic." would pass the test.
+
+
+function checkPalindromeV2(str){
+
+    let arrStr = str.split("");
+    for(let i = 0; i< str.length; i++){
+        if(arrStr[i]== " " || arrStr[i] == "," || arrStr[i] == "?" || arrStr[i] == ":" || arrStr[i] == '!'){
+            arrStr.splice(i,1);
+            i--; 
         }
     }
-    return strNum;
-}
 
-console.log(insertDash(454793));
+    str = arrStr.join('');
 
-
-
-// 3. Write a function `reverseString` that takes a string as a parameter 
-// and returns that string with the letters reversed **without using `.split()`, `.reverse()`, or `.join()`**.
-
-
-function reverseString(str){
     let newStr = "";
-    for(let i = str.length-1;i>= 0;i--){
+    for(let i = str.length-1;i >= 0;i--){
         newStr += str[i];
     }
-    return newStr;
+    str = str.toUpperCase();
+    newStr = newStr.toUpperCase();
+    console.log(str);
+    console.log(newStr);
+    return (str === newStr);
+    
 }
 
-console.log(reverseString('hello'));
 
+console.log(checkPalindromeV2('Sit on a potato pan, Otis!!!'));
 
-//
